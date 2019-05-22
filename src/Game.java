@@ -21,7 +21,7 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
         board = new TicTacToeBoard();
         System.out.println("Welcome to Tic Tac Toe!!!");
-        System.out.println("To start off, what's your name?");
+        System.out.println("To start off, what's your first name?");
         playerName = scanner.next();
         System.out.println("Well Hello " + playerName + "!");
         System.out.println("This is just like regular Tic Tac Toe. X goes first and it will be"
@@ -41,12 +41,13 @@ public class Game {
             do {
                if(turn == 1) {
                    System.out.println(playerName + ", enter valid index on TicTacToe board to mark: ");
-                   int index = scanner.nextInt() - 1;
-                   while(index < 0 || index >= 9 || board.get(index) != " ") {
+                   String i = scanner.next();
+                   String nums = "123456789";
+                   while(nums.contains(i) ||Integer.parseInt(i) - 1 < 0 || Integer.parseInt(i) - 1 >= 9 || !(board.get(Integer.parseInt(i)).equals(" "))) {
                        System.out.println(playerName +", enter valid index on TicTacToe board to mark: ");
-                       index = scanner.nextInt() - 1;
+                       i = scanner.next();
                    }
-                   
+                   int index = Integer.parseInt(i) - 1;
                    System.out.println(playerName +" marked " + (index + 1));
                    board.drawXO(playerSymbol, index);
                    System.out.println(board);
