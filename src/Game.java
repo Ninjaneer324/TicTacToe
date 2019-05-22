@@ -84,7 +84,7 @@ public class Game {
                     break;
             }
         }while(game.toLowerCase().equals("y"));
-        System.out.println("Thanks For Playing!!!");
+        System.out.println("\n\nThanks For Playing!!!");
     }
     
     public static String layout() {
