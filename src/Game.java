@@ -9,7 +9,6 @@
  * @author kakas
  */
 import java.util.*;
-import java.io.*;
 
 public class Game {
     private static TicTacToeBoard board;
@@ -33,7 +32,7 @@ public class Game {
             System.out.println("LayOut: ");
             System.out.println(layout()+"\n\n");
             board.resetBoard();
-            int rand = ((int) Math.random() * 2);
+            int rand = (((int) Math.random()) * 2) + 0;
             playerSymbol = (rand == 0) ? "X":"O";
             aiSymbol = (playerSymbol.equals("X")) ? "O":"X";
             int turn = (playerSymbol.equals("X")) ? 1:0;
@@ -43,7 +42,7 @@ public class Game {
                    System.out.println(playerName + ", enter valid index on TicTacToe board to mark: ");
                    String i = scanner.next();
                    String nums = "123456789";
-                   while(nums.contains(i) ||Integer.parseInt(i) - 1 < 0 || Integer.parseInt(i) - 1 >= 9 || !(board.get(Integer.parseInt(i)).equals(" "))) {
+                   while(nums.indexOf(i) == -1 ||Integer.parseInt(i) - 1 < 0 || Integer.parseInt(i) - 1 >= 9 || !(board.get(Integer.parseInt(i) -1).equals(" "))) {
                        System.out.println(playerName +", enter valid index on TicTacToe board to mark: ");
                        i = scanner.next();
                    }
@@ -84,6 +83,7 @@ public class Game {
                     game = scanner.next();
                     break;
             }
+            System.out.println("\n\n");
         }while(game.toLowerCase().equals("y"));
         System.out.println("\n\nThanks For Playing!!!");
     }
