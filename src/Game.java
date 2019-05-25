@@ -130,7 +130,7 @@ public class Game {
         else if(newBoard.isFull()) {
             int temp = fc;
             fc = 0;
-            return new Move(-1, 0, fc);
+            return new Move(-1, 0, temp);
         }
         ++fc;
         ArrayList<Move> moves = new ArrayList<Move>();
