@@ -25,6 +25,7 @@ public class TicTacToeBoard {
     public void erase(int pos) {
         board[pos] = " ";
     }
+    
     public void resetBoard() {
         for(int i = 0; i < 9; i++)
             erase(i);
@@ -56,6 +57,23 @@ public class TicTacToeBoard {
             (board[6].equals(symbol) && board[4].equals(symbol) && board[2].equals(symbol)) )
             return true;           
         return false;
+    }
+    
+    public String layout() {
+        String output = "";
+        int i = 0;
+        for(int r = 0; r < 3; r++) {
+            for(int c = 0; c < 3; c++) {
+                output += (i+1);
+                if(c < 2)
+                    output += "|";
+                ++i;
+            }
+            if(r < 2)
+                output += "\n-----";
+            output+= "\n";
+        }
+        return output;
     }
     
     public String toString() {
