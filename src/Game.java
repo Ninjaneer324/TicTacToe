@@ -71,15 +71,15 @@ public class Game {
             }while(terminalScore(board) == -11);
             switch(terminalScore(board)) {
                 case -10:
-                    System.out.println("You Win! Congrats! Play Again? [y/n]");
+                    System.out.println("You Win! Congrats! \nPlay Again? [y/n]");
                     game = scanner.next();
                     break;
                 case 10:
-                    System.out.println("Awww. You Lost. Play Again? [y/n]");
+                    System.out.println("Awww. You Lost. \nPlay Again? [y/n]");
                     game = scanner.next();
                     break;
                 case 0:
-                    System.out.println("Draw Play Again? [y/n]");
+                    System.out.println("Draw. \nPlay Again? [y/n]");
                     game = scanner.next();
                     break;
             }
