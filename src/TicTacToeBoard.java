@@ -34,14 +34,14 @@ public class TicTacToeBoard {
     public ArrayList<Integer> emptySpots() {
         ArrayList<Integer> empty = new ArrayList<Integer>();
         for(int i = 0; i < 9; i++) {
-            if(board[i] == " ")
+            if(board[i].equals(" "))
                 empty.add(i);
         }
         return empty;
     }
     
     public boolean isFull() {
-        return emptySpots().size() == 0;
+        return emptySpots().isEmpty();
     }
     
     public boolean win(String symbol) {
